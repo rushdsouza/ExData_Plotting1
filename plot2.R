@@ -14,5 +14,6 @@ power2 <- cbind(DateTime = paste(as.character(power1$Date), power1$Time, sep=" "
 library(ggplot2)
 qplot(as.numeric(DateTime), Global_active_power, data=power2,xlab=power2$Day, ylab="Global Active Power (kilowatts)", geom="path")
 
-dev.copy(png, file = "plot2.png", width=480, height=480) ## Copy my plot to a PNG file
-dev.off() ## Don't forget to close the PNG device!
+# Copy my plot to a PNG file, plot2.png in working directory
+dev.copy(png, file = "plot2.png", width=480, height=480) 
+dev.off() 
