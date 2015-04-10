@@ -8,5 +8,7 @@ power$Date <- as.Date(power$Date, format="%d/%m/%Y",tz="")
 power1 <- power[((power$Date == "2007-02-01") | (power$Date == "2007-02-02")), ]
 
 hist(power1$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", main = "Global Active Power")
-dev.copy(png, file = "plot1.png", width=480, height=480) ## Copy my plot to a PNG file
-dev.off() ## Don't forget to close the PNG device!
+
+# Copy my plot to a PNG file, plot1.png in working directory
+dev.copy(png, file = "plot1.png", width=480, height=480)
+dev.off()
