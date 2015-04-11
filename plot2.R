@@ -11,8 +11,9 @@ power1 <- power[((power$Date == "2007-02-01") | (power$Date == "2007-02-02")), ]
 power2 <- cbind(DateTime = paste(as.character(power1$Date), power1$Time, sep=" "), Day = weekdays(as.Date(power1$Date),abbreviate=TRUE), power1) 
 
 # Plot plot2 using qplot
-library(ggplot2)
-qplot(as.numeric(DateTime), Global_active_power, data=power2,xlab=power2$Day, ylab="Global Active Power (kilowatts)", geom="path")
+with(power2, plot(as.numeric(DateTime), Global_active_power, xlab=unique(weekdays(as.Date(power2$DateTime),abbreviate=TRUE)), ylab="Global Active Power (kilowatts)", type="l",xaxt="n", xaxs="r"))
+# library(ggplot2)
+# qplot(as.numeric(DateTime), Global_active_power, data=power2,xlab=power2$Day, ylab="Global Active Power (kilowatts)", geom="path")
 
 # Copy my plot to a PNG file, plot2.png in working directory
 dev.copy(png, file = "plot2.png", width=480, height=480) 
