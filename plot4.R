@@ -13,7 +13,7 @@ power2 <- cbind(DateTime = paste(as.character(power1$Date), power1$Time, sep=" "
 par(mfrow = c(2, 2))
 with(power2, 
 {
-    plot(as.numeric(DateTime), Global_active_power, xlab=unique(weekdays(as.Date(power2$DateTime),abbreviate=TRUE)), ylab="Global Active Power (kilowatts)", type="l",xaxt="n")
+    plot(as.numeric(DateTime), Global_active_power, xlab=unique(weekdays(as.Date(power2$DateTime),abbreviate=TRUE)), ylab="Global Active Power", type="l",xaxt="n")
     plot(as.numeric(DateTime), Voltage, xlab="datetime", ylab="Voltage", type="l", xaxt="n")
     plot(as.numeric(DateTime), Sub_metering_1, xlab=unique(power2$Day), ylab="Energy sub metering", type="l", xaxt="n")
     with(subset(power2),lines(as.numeric(DateTime), Sub_metering_2, type="l", col="red"))
