@@ -12,7 +12,7 @@ power2 <- cbind(DateTime = strptime(paste(as.character(power1$Date), power1$Time
 
 # Plot plot2 using plot
 with(power2,{
-    plot(as.numeric(power2$DateTime),power2$Global_active_power, xlab="", ylab="Global Active Power (kilowatts)", type="l",xaxt="n")
+    plot(as.numeric(DateTime), Global_active_power, xlab="", ylab="Global Active Power (kilowatts)", type="l",xaxt="n")
     xday <- as.POSIXct(range(power2$DateTime))
     axis.POSIXct(1,xday, at=seq(xday[1], xday[2], by = "days"), format="%a", labels = TRUE)
 })
